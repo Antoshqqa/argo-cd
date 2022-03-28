@@ -404,7 +404,7 @@ func (m *ApplicationResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_ApplicationResponse proto.InternalMessageInfo
 
 type ApplicationCreateRequest struct {
-	Application          v1alpha1.Application `protobuf:"bytes,1,req,name=application" json:"application"`
+	Application          *v1alpha1.Application `protobuf:"bytes,1,req,name=application" json:"application"`
 	Upsert               *bool                `protobuf:"varint,2,opt,name=upsert" json:"upsert,omitempty"`
 	Validate             *bool                `protobuf:"varint,3,opt,name=validate" json:"validate,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
@@ -447,7 +447,7 @@ var xxx_messageInfo_ApplicationCreateRequest proto.InternalMessageInfo
 
 func (m *ApplicationCreateRequest) GetApplication() v1alpha1.Application {
 	if m != nil {
-		return m.Application
+		return *m.Application
 	}
 	return v1alpha1.Application{}
 }
